@@ -49,6 +49,22 @@ const initializeDetailButtonEvents = () => {
             theDialog.showModal()
         }
     )
+    // Show Julius's details when the button is clicked
+    document.querySelector("#button--julius").addEventListener(
+        "click",
+        theClickEvent => {
+            const theDialog = document.querySelector("#details--julius")
+            theDialog.showModal()
+        }
+    )
+    // Show Julius's details when the button is clicked
+    document.querySelector("#button--bill").addEventListener(
+        "click",
+        theClickEvent => {
+            const theDialog = document.querySelector("#details--bill")
+            theDialog.showModal()
+        }
+    )
 }
 
 export default initializeDetailButtonEvents
