@@ -8,63 +8,22 @@ const initializeDetailButtonEvents = () => {
                 dialogElement.close()
             }
         )
+        }
+        
+        const allDetailButtons = document.querySelectorAll("button[id^='button--']")
+
+    // Add an event listener to each one
+    for (const btn of allDetailButtons) {
+        btn.addEventListener(
+            "click",
+            (theEvent) => {
+                const dialogSiblingSelector = `#${theEvent.target.id}+dialog`
+                const theDialog = document.querySelector(dialogSiblingSelector)
+                theDialog.showModal()
+            }
+        )
     }
-    // CAN'T TOUCH THIS - END
 
-
-    // You will be writing code below this line
-
-    // Show Bart's details when the button is clicked
-    document.querySelector("#button--bart").addEventListener(
-        "click",
-        theClickEvent => {
-            const theDialog = document.querySelector("#details--bart")
-            theDialog.showModal()
-        }
-    )
-
-    // Show Betty's details when the button is clicked
-    document.querySelector("#button--betty").addEventListener(
-        "click",
-        theClickEvent => {
-            const theDialog = document.querySelector("#details--betty")
-            theDialog.showModal()
-        }
-    )
-
-    // Show Nemo's details when the button is clicked
-    document.querySelector("#button--nemo").addEventListener(
-        "click",
-        theClickEvent => {
-            const theDialog = document.querySelector("#details--nemo")
-            theDialog.showModal()
-        }
-    )
-
-    // Show Dory's details when the button is clicked
-    document.querySelector("#button--dory").addEventListener(
-        "click",
-        theClickEvent => {
-            const theDialog = document.querySelector("#details--dory")
-            theDialog.showModal()
-        }
-    )
-    // Show Julius's details when the button is clicked
-    document.querySelector("#button--julius").addEventListener(
-        "click",
-        theClickEvent => {
-            const theDialog = document.querySelector("#details--julius")
-            theDialog.showModal()
-        }
-    )
-    // Show Julius's details when the button is clicked
-    document.querySelector("#button--bill").addEventListener(
-        "click",
-        theClickEvent => {
-            const theDialog = document.querySelector("#details--bill")
-            theDialog.showModal()
-        }
-    )
+    
 }
-
 export default initializeDetailButtonEvents
